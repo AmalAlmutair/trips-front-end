@@ -34,9 +34,10 @@ class AuthStore {
   signin = async (user) => {
     try {
       // user = { username: "Ali Ahmad", password: "123KDD"}
-      const res = await instance.post("/api/user/singin", user);
+      console.log(user);
+      const res = await instance.post("/api/user/signin", user);
       this.setUser(res.data.token);
-      // console.log(res.data.token);
+      console.log(res.data.token);
     } catch (error) {
       console.log(error);
     }

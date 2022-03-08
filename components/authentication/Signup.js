@@ -5,11 +5,11 @@ import authStore from "../../stores/authStore";
 const Signup = () => {
   const [user, setUser] = useState({ username: "", password: "" });
 
-  const handelCange = (type, e) => {
-    setUser({ ...user, [type]: e });
-  };
-
-  return <View></View>;
+  return (
+    <View>
+      <Text>hu</Text>
+    </View>
+  );
 };
 
 export default Signup;
