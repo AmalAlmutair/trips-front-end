@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Home from "../Home";
+import Signup from "../authentication/Signup";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Signin from "../authentication/Signin";
