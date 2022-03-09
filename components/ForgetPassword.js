@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import authStore from "../../stores/authStore";
 import { SafeAreaView, StyleSheet, Text, View, Image } from "react-native";
+import React from "react";
 import {
   Button,
   Box,
@@ -13,37 +12,22 @@ import {
   Link,
 } from "native-base";
 
-const Signin = ({ navigation }) => {
-  const [user, setUser] = useState({ username: "", password: "" });
-
-  const handleSubmit = () => {
-    authStore.signin(user);
-  };
-
-  console.log(user);
+const ForgetPassword = ({ navigation }) => {
   return (
     <Center w="100%">
-      <Image
-        source={require("../../assets/istockphoto.jpeg")}
-        style={styles.image}
-      />
       <Box safeArea p="2" py="8" w="90%" maxW="290">
         <Heading
           size="lg"
           fontWeight="600"
-          alignSelf="center"
-          // marginTop="150"
-          padding="1"
           color="coolGray.800"
           _dark={{
             color: "warmGray.50",
           }}
         >
-          Welcome To Nomadic
+          Welcome
         </Heading>
         <Heading
           mt="1"
-          alignSelf="center"
           _dark={{
             color: "warmGray.200",
           }}
@@ -56,20 +40,13 @@ const Signin = ({ navigation }) => {
 
         <VStack space={3} mt="5">
           <FormControl>
-            <FormControl.Label>Username</FormControl.Label>
-            <Input
-              onChangeText={(username) => setUser({ ...user, username })}
-            />
+            <FormControl.Label>Email ID</FormControl.Label>
+            <Input />
           </FormControl>
           <FormControl>
             <FormControl.Label>Password</FormControl.Label>
-            <Input
-              type="password"
-              onChangeText={(password) => setUser({ ...user, password })}
-            />
-            <Text
-              onPress={() => navigation.navigate("ForgetPassword")}
-              style={styles.pass}
+            <Input type="password" />
+            <Link
               _text={{
                 fontSize: "xs",
                 fontWeight: "500",
@@ -79,9 +56,9 @@ const Signin = ({ navigation }) => {
               mt="1"
             >
               Forget Password?
-            </Text>
+            </Link>
           </FormControl>
-          <Button onPress={handleSubmit} mt="2" colorScheme="indigo">
+          <Button mt="2" colorScheme="indigo">
             Sign in
           </Button>
           <HStack mt="6" justifyContent="center">
@@ -94,9 +71,7 @@ const Signin = ({ navigation }) => {
             >
               I'm a new user.{" "}
             </Text>
-            <Text
-              style={styles.link}
-              onPress={() => navigation.navigate("Signup")}
+            <Link
               _text={{
                 color: "indigo.500",
                 fontWeight: "medium",
@@ -105,7 +80,7 @@ const Signin = ({ navigation }) => {
               href="#"
             >
               Sign Up
-            </Text>
+            </Link>
           </HStack>
         </VStack>
       </Box>
@@ -113,21 +88,6 @@ const Signin = ({ navigation }) => {
   );
 };
 
-export default Signin;
+export default ForgetPassword;
 
-const styles = StyleSheet.create({
-  image: {
-    height: "20%",
-    width: "20%",
-  },
-  link: {
-    textDecorationLine: "underline",
-    color: "#6366F1",
-  },
-
-  pass: {
-    textDecorationLine: "underline",
-    color: "#6366F1",
-    marginLeft: "57%",
-  },
-});
+const styles = StyleSheet.create({});

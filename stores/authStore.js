@@ -35,9 +35,13 @@ class AuthStore {
     try {
       // user = { username: "Ali Ahmad", password: "123KDD"}
       const res = await instance.post("/api/user/signin", user);
+
       this.setUser(res.data.token);
       console.log(res.data.token);
     } catch (error) {
+      if (error.message == "Request failed with status code 401") {
+        alert("username or password is wrong");
+      }
       console.log(error);
     }
   };

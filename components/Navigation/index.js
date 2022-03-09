@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Home from "../Home";
-import Signup from "../authentication/Signup";
-
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
+import ForgetPassword from "../ForgetPassword";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +26,11 @@ const RootNavigator = () => {
       <Stack.Screen
         name="Signup"
         component={Signup}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ForgetPassword"
+        component={ForgetPassword}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

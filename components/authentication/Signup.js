@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Alert, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import {
   Button,
   Box,
@@ -26,6 +26,8 @@ const Signup = () => {
   const handleChange = () => {
     if (isPasswordMatch === true) {
       authStore.signup(user);
+    } else {
+      Alert.alert("Password doen't match");
     }
   };
 
