@@ -5,12 +5,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
 import ForgetPassword from "../ForgetPassword";
+import Profile from "../authentication/Profile";
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Signin">
+    <Stack.Navigator initialRouteName="Profile">
       <Stack.Screen
         name="Home"
         component={Home}
@@ -32,6 +33,11 @@ const RootNavigator = () => {
         name="ForgetPassword"
         component={ForgetPassword}
         options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        //options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

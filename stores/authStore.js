@@ -20,24 +20,25 @@ class AuthStore {
     this.user = null;
   };
 
-  signup = async (user) => {
+  signup = async (user, navigation) => {
     try {
       // user = { username: "Ali Ahmad", password: "123KDD"}
       const res = await instance.post("/api/user/signup", user);
       this.setUser(res.data.token);
-      console.log(res.data.token);
+      //console.log(res.data.token);
+      navigation.navigate("Home");
     } catch (error) {
       console.log(error);
     }
   };
 
-  signin = async (user) => {
+  signin = async (user, navigation) => {
     try {
       // user = { username: "Ali Ahmad", password: "123KDD"}
       const res = await instance.post("/api/user/signin", user);
-
       this.setUser(res.data.token);
-      console.log(res.data.token);
+      //console.log(res.data.token);
+      navigation.navigate("Home");
     } catch (error) {
       if (error.message == "Request failed with status code 401") {
         alert("username or password is wrong");

@@ -24,23 +24,36 @@ const ForgetPassword = ({ navigation }) => {
           size="lg"
           marginTop="150"
           fontWeight="600"
+          padding="1"
           color="coolGray.800"
           _dark={{
             color: "warmGray.50",
           }}
         >
-          Welcome
+          Forgot Your Password ?
+        </Heading>
+
+        <Heading
+          mt="1"
+          marginRight="1"
+          alignSelf="center"
+          _dark={{
+            color: "warmGray.200",
+          }}
+          color="coolGray.600"
+          fontWeight="medium"
+          size="xs"
+        >
+          Enter your email or username and we'll send a link to reset your
+          password{" "}
         </Heading>
 
         <VStack space={3} mt="5">
           <FormControl>
-            <FormControl.Label>Email ID or Username</FormControl.Label>
+            <FormControl.Label>Email Address or Username</FormControl.Label>
             <Input />
           </FormControl>
-          <FormControl>
-            <FormControl.Label>Last Entered Password</FormControl.Label>
-            <Input type="password" />
-          </FormControl>
+
           <Button onPress={handleSubmit} mt="2" colorScheme="indigo">
             Submit
           </Button>
