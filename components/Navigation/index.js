@@ -5,15 +5,23 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
 import ForgetPassword from "../ForgetPassword";
+
 import Profile from "../authentication/Profile";
 import TripsList from "../Trips/TripsList";
 import TripCreate from "../Trips/TripCreate";
+
+import Profile from "../Profile";
+
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
   return (
+
     <Stack.Navigator initialRouteName="Signin">
+
+    <Stack.Navigator initialRouteName="Home">
+
       <Stack.Screen
         name="Home"
         component={Home}
@@ -51,6 +59,11 @@ const RootNavigator = () => {
         name="Profile"
         component={Profile}
         //options={{ headerShown: false }}
+      {/* <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{ headerShown: false }}
+
       /> */}
     </Stack.Navigator>
   );
