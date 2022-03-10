@@ -47,9 +47,7 @@ const Profile = () => {
       </View>
       <View style={styles.trips}>
         <Text style={styles.details}>My Trips</Text>
-        <ScrollView style={{ flex: 1 }}>
-          <tripItem />
-        </ScrollView>
+        <ScrollView style={{ flex: 1 }}>{/* <TripItem /> */}</ScrollView>
       </View>
     </View>
   );
