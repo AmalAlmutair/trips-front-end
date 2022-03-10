@@ -3,12 +3,13 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Profile from "./Profile";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.view1}>
       <View style={styles.view2}>
-        <Text>HI</Text>
+        <Profile />
       </View>
       <View style={styles.view3}>
         <HStack style={styles.view3}>
@@ -25,7 +26,13 @@ const Home = () => {
             style={styles.icon}
             color="black"
           />
-          <AntDesign name="user" size={30} style={styles.icon} color="black" />
+          <AntDesign
+            //onPress={() => navigation.navigate("Profile")}
+            name="user"
+            size={30}
+            style={styles.icon}
+            color="black"
+          />
           <MaterialCommunityIcons
             name="google-maps"
             size={30}
@@ -48,7 +55,6 @@ const styles = StyleSheet.create({
   },
   view2: {
     flex: 9,
-    backgroundColor: "white",
   },
   view3: {
     flex: 1,
